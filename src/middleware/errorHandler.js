@@ -12,6 +12,7 @@ export default function errorHandler(err, req, res, next) {
 
       res.status(statusCode).json({
         status: statusCode >= 500 ? 'error' : 'fail',
-        message
+        message,
+        error: message
       })
 }
