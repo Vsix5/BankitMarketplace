@@ -21,7 +21,7 @@ export async function signin(req, res, next) {
     req.session.regenerate((error) => {
         if (error) return next(error);
 
-        req.session.user = { name: user.name, email: user.email };
+        req.session.user = { login_id: user.login_id, name: user.name, email: user.email };
 
         req.session.save((error) => {
             if (error) return next(error);

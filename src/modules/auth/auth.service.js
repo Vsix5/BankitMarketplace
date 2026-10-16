@@ -27,7 +27,7 @@ export async function signupUser(name, email, password) {
 
 export async function findUserByEmail(email) {
     const result = await pool.query(
-        'SELECT name, email, password FROM bankit_table WHERE email = $1',
+        'SELECT login_id, name, email, password FROM bankit_table WHERE email = $1',
         [email]
     );
     return result.rows[0];
